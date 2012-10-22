@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>Martin Flyer Catalog</title>
+  <style type="text/css">
+    div#main {
+      width: 851px;
+      margin: 0 auto 0 auto;
+    }
+    table {
+      margin-bottom: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="main">
+    <% @categories.each do |cat| %>
+      <% next if cat[:images].empty? %>
+    <p><%= cat[:name] %></p>
+    <table>
+        <% cat[:images].each_slice(3) do |chunk| %>
+          <tr>
+            <% chunk.each do |image| %>
+              <td><img src="<%= image %>" /></td>
+            <% end %>
+         </tr>
+        <% end %>
+    </table>
+    <% end %>
+  </div>
+</body>
+</html>
