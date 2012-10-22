@@ -30,7 +30,8 @@ class Group
         File.basename(i).include? @removal_key
       end
     end
-    matches.map {|i| i.sub(/.+\/images/, '/images')}
+    # matches.map {|i| i.sub(/.+\/images/, '/images')}
+    matches
   end
 
   def has_image?

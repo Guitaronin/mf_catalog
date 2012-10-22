@@ -1,8 +1,10 @@
 require 'rubygems'
+require 'bundler'
 require 'erb'
-require 'prawn'
 require 'fastercsv'
 require 'pp'
+Bundler.setup
+require 'prawn'
 
 $:.unshift(File.dirname(__FILE__)) unless
   $:.include?(File.dirname(__FILE__)) || $:.include?(File.expand_path(File.dirname(__FILE__)))
